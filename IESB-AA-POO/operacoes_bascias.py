@@ -16,3 +16,8 @@ print("A soma dos números é {} ".format(soma)) #A mesma coisa que o acima, por
 print("A soma dos números {} e {} é {} ".format(numero1, numero2, soma)) #Outro exemplo
 print("{} somou os números {} e {} é o resultado foi {} ".format(nome, numero1, numero2, soma)) #Outro exemplo
 print("{0} dividiu {1} por {2} é o resultado foi {3} ".format(nome, numero1, numero2, divisao)) #Outro exemplo ordenando
+
+#Como solicitar um input em tela do usuario
+print("Digite qualquer coisa: ")
+input_usuario = input(); #Aguardo o usuario deigitar algo
+print("Você digitou:", input_usuario) #imprimindo o que o usuario digitou
