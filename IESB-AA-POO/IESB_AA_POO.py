@@ -35,14 +35,29 @@ class Aluno:
 #Uma classe chamada disciplinas, onde receberá os dados de nome da disciplina,
 #alunos matriculados e o código
 class Disciplina:
+    seq = 0
+    desciplinas = []
 
-    def CadastrarDisciplina(self, nome, descricao, codigo):
+    def __init__(self, nome, descricao, codigo):
         self.nome = nome
         self.descricao = descricao
         self.codigo = codigo
-        self.alunosMatriculados
 
+    def salvar(self):
+        self.__class__.seq += 1
+        self.id = self.__class__.seq
+        self.__class__.desciplinas.append(self)
 
+    def __str__(self):
+        return self.nome
+
+    def __repr__(self):
+        return "{} - {} - {} - {}\n".format(self.id, self.nome, self.descricao, self.codigo)
+
+    @classmethod
+    def all(cls):
+        return cls.desciplinas
+    
 #classe Menu
 class Menu:
 
@@ -52,6 +67,7 @@ class Menu:
         print(" 1 - Cadastrar Aluno")
         print(" 2 - Listar Alunos")
         print(" 4 - Cadastrar Disciplinas" )
+        print(" 5 - Listar Disciplinas" )
         print(" 9 - Sair")
         print("---------------------------")
 
@@ -62,17 +78,17 @@ while True:
     Menu()
     user_input = int(input())
 
-    if user_input == 1:
+    if  user_input == 1:
         print("Nome do aluno: ")
         alunoNome = str(input())
         print("Idade do aluno: ")
         alunoIdade = int(input())
-        print("Matricula do aluno")
+        print("Matricula do aluno: ")
         alunoMatricula = int(input())
 
         novoAluno = Aluno(alunoNome, alunoIdade, alunoMatricula, None)
         novoAluno.salvar()
-        print("Aluno salvo com sucesso")
+        print("Aluno salvo com sucesso!")
         print("tecle Enter para continuar")
         input()
 
@@ -82,7 +98,21 @@ while True:
         input()
 
     elif user_input == 4:
-        print("Selecionado 1")
+        print("Nome da disciplina: ")
+        disciplinaNome = str(input())
+        print("Descrição da disciplina: ")
+        disciplinaDescricao = str(input())
+        print("Código da disciplina: ")
+        disciplinaCodigo = int(input())
+
+        novaDisciplina = Disciplina(disciplinaNome, disciplinaDescricao, disciplinaCodigo)
+        novaDisciplina.salvar()
+        print("Disciplina salva com sucesso!")
+        print("tecle Enter para continuar")
+        input()
+
+    elif user_input == 5:
+        print(novaDisciplina.all())
         print("tecle Enter para continuar")
         input()
     elif user_input == 9:
