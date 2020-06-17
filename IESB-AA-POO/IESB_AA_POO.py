@@ -24,7 +24,7 @@ class Aluno:
         return self.nome
 
     def __repr__(self):
-        return "{} - {} - {}".format(self.id, self.nome, self.matricula)
+        return "{} - {} - {} - {}\n".format(self.id, self.nome, self.idade, self.matricula)
 
     @classmethod
     def all(cls):
@@ -50,7 +50,8 @@ class Menu:
         print("##### Menu Principal ######")
         print("---------------------------")
         print(" 1 - Cadastrar Aluno")
-        print(" 2 - Cadastrar Disciplinas" )
+        print(" 2 - Listar Alunos")
+        print(" 4 - Cadastrar Disciplinas" )
         print(" 9 - Sair")
         print("---------------------------")
 
@@ -76,6 +77,11 @@ while True:
         input()
 
     elif user_input == 2:
+        print(novoAluno.all())
+        print("tecle Enter para continuar")
+        input()
+
+    elif user_input == 4:
         print("Selecionado 1")
         print("tecle Enter para continuar")
         input()
