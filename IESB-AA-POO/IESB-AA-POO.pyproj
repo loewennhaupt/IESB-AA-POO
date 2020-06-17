@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>63b56fcd-53de-4a90-8ea2-ce28bea7e04d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>operacoes_bascias.py</StartupFile>
+    <StartupFile>IESB_AA_POO.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
